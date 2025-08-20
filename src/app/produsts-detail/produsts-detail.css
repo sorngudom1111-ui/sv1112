@@ -1,0 +1,16 @@
+#product-detail .row {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#product-detail .row:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+#product-detail img {
+  transition: transform 0.3s ease;
+}
+
+#product-detail img:hover {
+  transform: scale(1.05);
+}

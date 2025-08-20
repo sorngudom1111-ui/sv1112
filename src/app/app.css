@@ -1,0 +1,23 @@
+.navbar {
+  transition: background 0.3s ease;
+}
+
+.navbar .nav-link {
+  color: #ddd !important;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #1403ff !important; /* highlight on hover/active */
+}
+
+.btn-warning {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-warning:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}

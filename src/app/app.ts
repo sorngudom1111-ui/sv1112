@@ -1,12 +1,15 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterOutlet, RouterLink } from '@angular/router';
+import { CardService } from './service/card-service';
+import { Footer } from './footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('final_web');
+  constructor(public cardService: CardService) {
+  }
 }

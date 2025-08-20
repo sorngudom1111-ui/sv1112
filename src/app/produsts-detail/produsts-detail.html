@@ -1,0 +1,40 @@
+<div class="container my-5" id="product-detail">
+  <div class="row shadow-lg p-4 rounded bg-white">
+    <!-- Product Image -->
+    <div class="col-md-6 d-flex align-items-center justify-content-center">
+      <img
+        [src]="product.image"
+        alt="Product Image"
+        class="img-fluid rounded border"
+        style="max-height: 400px; object-fit: contain"
+      />
+    </div>
+
+    <!-- Product Details -->
+    <div class="col-md-6">
+      <h2 class="fw-bold mb-3">{{ product.title }}</h2>
+
+      <span class="badge bg-secondary mb-3 text-uppercase">
+        {{ product.category }}
+      </span>
+
+      <h4 class="text-success fw-semibold mb-3">
+        {{ product.price | currency:'USD' }}
+      </h4>
+
+      <!-- Star Rating (Optional) -->
+      <div class="mb-3 text-warning" style="font-size: 1.2rem">
+        ⭐⭐⭐⭐☆
+        <small class="text-muted ms-2">(Rating not implemented)</small>
+      </div>
+
+      <p class="text-muted mb-4" style="line-height: 1.6">
+        {{ product.description }}
+      </p>
+
+      <button class="btn btn-warning w-100" (click)="addtocard(product)">
+        add to card
+      </button>
+    </div>
+  </div>
+</div>

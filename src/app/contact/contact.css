@@ -1,0 +1,24 @@
+.contact-section {
+  max-width: 1100px;
+}
+.contact-card {
+  border-radius: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+.btn-submit {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+.btn-submit:hover {
+  background: linear-gradient(135deg, #20c997, #28a745);
+  transform: scale(1.02);
+}

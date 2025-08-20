@@ -1,0 +1,32 @@
+.checkout-box {
+  border-radius: 15px;
+  background: #fff;
+}
+
+.order-summary h2 {
+  font-size: 1.8rem;
+}
+
+.order-item {
+  transition: background 0.2s ease;
+}
+.order-item:hover {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.payment-methods h4 {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+}
+
+#pay-now-btn {
+  padding: 15px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+#pay-now-btn:hover {
+  background: #20c997;
+}

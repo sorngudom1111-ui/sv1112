@@ -1,0 +1,23 @@
+.pro-img {
+  height: 200px;
+  width: 100%;
+  object-fit: contain;
+}
+.product-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Show 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.product-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Show 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.product-description:hover {
+  color: #0e36ff; /* Yellow hover */
+  text-shadow: 0 0 5px rgba(26, 248, 248, 0.7);
+}

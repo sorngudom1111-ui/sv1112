@@ -1,0 +1,77 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 shadow-lg p-5 rounded bg-white checkout-box">
+
+      <!-- Order Summary -->
+      <div class="order-summary mb-5">
+        <h2 class="text-center mb-4 fw-bold">🛒 Order Summary</h2>
+
+        @for (item of cardService.getCarditem(); track item.id) {
+          <div *ngIf="item.is_select" class="order-item border-bottom pb-3 mb-3">
+            <h5 class="fw-semibold">{{ item.title }}</h5>
+            <p class="mb-1 text-muted">Price: {{ item.price | currency }}</p>
+            <div class="d-flex align-items-center mb-2">
+              <span class="me-2 fw-semibold">Qty:</span>
+              <input
+                [value]="item.qty"
+                class="form-control text-center"
+                style="width: 60px"
+                readonly
+              />
+            </div>
+            <p class="fw-bold text-success">
+              Total: {{ item.price * item.qty | currency }}
+            </p>
+          </div>
+        }
+
+        <div class="d-flex justify-content-between align-items-center border-top pt-3">
+          <h5 class="fw-bold">Grand Total:</h5>
+          <h5 class="text-success fw-bold">{{ getTotal() | currency }}</h5>
+        </div>
+      </div>
+
+      <!-- Payment Methods -->
+      <div class="payment-methods mb-5">
+        <h4 class="mb-4 fw-semibold">💳 Payment Method</h4>
+        
+        <div class="form-group mb-4">
+          <label for="payment-method" class="form-label fw-semibold">Select Payment Method</label>
+          <select class="form-select" id="payment-method">
+            <option value="credit-card">Credit Card</option>
+            <option value="visa">VISA Card</option>
+          </select>
+        </div>
+
+        <!-- Credit Card Details -->
+        <div id="credit-card-details" class="payment-method-details mb-4">
+          <h6 class="text-muted mb-3">Enter Card Details</h6>
+          <div class="row g-3">
+            <div class="col-12">
+              <input type="text" id="card-number" class="form-control" placeholder="Card Number (XXXX XXXX XXXX XXXX)" />
+            </div>
+            <div class="col-md-6">
+              <input type="text" id="expiry-date" class="form-control" placeholder="MM/YY" />
+            </div>
+            <div class="col-md-6">
+              <input type="password" id="cvv" class="form-control" placeholder="CVV" />
+            </div>
+          </div>
+        </div>
+
+        <!-- PayPal -->
+        <div id="paypal-details" class="payment-method-details mb-4 d-none">
+          <h6 class="text-muted mb-3">Pay via PayPal</h6>
+          <button class="btn btn-outline-primary w-100">Pay with PayPal</button>
+        </div>
+      </div>
+
+      <!-- Pay Now -->
+      <div class="text-center">
+        <button class="btn btn-lg btn-success w-100 fw-bold" id="pay-now-btn" (click)="paynow()">
+          ✅ Pay Now
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

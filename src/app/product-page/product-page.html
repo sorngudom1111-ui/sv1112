@@ -1,0 +1,8 @@
+<div class="container-sm mt-0">
+  @for (item of productService.getProduct(); track item.id) {
+  <app-products
+    [product]="item"
+    (onAddtoCard)="addtocard($event)"
+  ></app-products>
+  }
+</div>
